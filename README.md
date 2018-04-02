@@ -82,7 +82,7 @@ it is time to start annotating your images.  Use "Open Dir" to add the directory
 *Example of labeled image*
 ![image.png](images/lblimg.png?raw=true)
 
-Once you've completed the annotations, copy ~10% of the images along with their corresponding XML files into a directory within your images directory called "test" and copy the rest of the images/XMLs into another directory called "train."
+Once you've completed the annotations, copy ~10% of the images along with their corresponding XML files into a directory within your images directory called "test" and copy the rest of the images/XMLs into another directory called "train."  If you've collected your images from videos like me, you may not end up labelling all of them, in which case you would only want to move the images that have a corresponding xml file.  In that case, you can use the code in this repo from "Moving image files along with their XML.ipynb" to move only the images that have been labeled.
 
 ----------------
 
