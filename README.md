@@ -253,4 +253,4 @@ Next, add whatever images you would like to test your detection on to the direct
 TEST_IMAGE_PATHS = [ os.path.join(PATH_TO_TEST_IMAGES_DIR, 'image{}.png'.format(i)) for i in range(5, 7) ]
 ```
 
-Check out the results folder on this repo to see some of my results.
+Check out the images folder on this repo to see some of my results.
