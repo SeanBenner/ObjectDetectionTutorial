@@ -4,10 +4,10 @@ Original author is Dati Tran, from his repo https://github.com/datitran/raccoon_
 Usage:
   # From tensorflow/models/
   # Create train data:
-  python generate_tfrecord.py --csv_input=data/train_labels.csv  --output_path=train.record
+  python generate_tfrecord.py --csv_input=train_labels.csv  --output_path=train.record
 
   # Create test data:
-  python generate_tfrecord.py --csv_input=data/test_labels.csv  --output_path=test.record
+  python generate_tfrecord.py --csv_input=test_labels.csv  --output_path=test.record
 """
 from __future__ import division
 from __future__ import print_function
@@ -85,8 +85,7 @@ def create_tf_example(group, path):
 
 def main(_):
     writer = tf.python_io.TFRecordWriter(FLAGS.output_path)
-    # change images/train/ to images/test/ as necessary depending on which record you are creating
-    path = os.path.join(os.getcwd(), 'images/train/')
+    path = os.path.join(os.getcwd(), 'images/')
     examples = pd.read_csv(FLAGS.csv_input)
     grouped = split(examples, 'filename')
     for group in grouped:
