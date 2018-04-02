@@ -68,7 +68,7 @@ for second in range(int(clip.duration)):
 
 Now, in my "images" folder I have a bunch of screenshots from the video, labeled with the second at which it was taken from the video:
 
-![image.png](attachment:image.png)
+![image.png](images/files.png?raw=true)
 
 The amount of images that you'll need for training will probably range from 100-500, depending on how complex the object is and how powerful/accurate you want your object detection model to be.  In my project, the objects are 2D images that only vary in shading, so I didn't have to worry about things such as size and angle, and I acheived good accuracy with ~150 images of each digit.  If you're not getting the results you want you can always go back and collect more data for training.
 
@@ -80,7 +80,7 @@ python labelImg.py
 it is time to start annotating your images.  Use "Open Dir" to add the directory that contains your saved images.  Use the shortcut key 'w' to create a bounding box and drag it over your object(s).  Once you've labeled everything in your image, click save or use 'ctrl + s' to save the xml file in the same directory as your image, and click next to go to the next image.
 
 *Example of labeled image*
-![image.png](attachment:image.png)
+![image.png](images/lblimg.png?raw=true)
 
 Once you've completed the annotations, copy ~10% of the images along with their corresponding XML files into a directory within your images directory called "test" and copy the rest of the images/XMLs into another directory called "train."
 
@@ -216,7 +216,7 @@ python train.py --logtostderr --train_dir=training/ --pipeline_config_path=faste
 So the program is taking three arguments, if you are using a different model then your 3rd argument will be different, but it is simply pointing to the .config file that we created earlier, so set yours accordingly.  The training directory that we created is where the program will put the output of its training session.
 
 Now the training begins and you should start seeing your loss value.  Here is a screenshot from my training:
-![image.png](attachment:image.png)
+![image.png](images/training.png?raw=true)
 It's taking ~30 seconds per step, which is pretty slow but expected since I am not using a GPU.  Once your loss starts averaging around 1 then you stop the training by using ctrl + z in the terminal, but feel free to let it train longer if you want.  
 
 --------------------------
